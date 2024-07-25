@@ -1,0 +1,254 @@
+{
+    "scopeName": "source.enplatedmvc",
+    "fileTypes": [
+        "enp"
+    ],
+    "patterns": [
+        {
+            "include": "#enplatedmvc-blocks"
+        },
+        {
+            "include": "#html-spec"
+        },
+        {
+            "include": "text.html.basic" 
+        }
+    ],
+    "repository": {
+        "enplatedmvc-blocks": {
+            "patterns": [
+                {
+                    "name": "comment.block.enplatedmvc",
+                    "begin": "\\{\\{--",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.comment.begin.enplatedmvc"
+                        }
+                    },
+                    "end": "--\\}\\}",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.definition.comment.end.enplatedmvc"
+                        }
+                    }
+                },
+                {
+                    "name": "meta.control.enplatedmvc",
+                    "begin": "@(if|elseif|for|foreach)\\b",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "keyword.control.enplatedmvc"
+                        }
+                    },
+                    "end": "(?<=\\))",
+                    "patterns": [
+                        {
+                            "include": "#expression"
+                        }
+                    ]
+                },
+                {
+                    "name": "meta.include.enplatedmvc",
+                    "begin": "(@include)\\s*\\(",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control.enplatedmvc"
+                        }
+                    },
+                    "end": "\\)",
+                    "patterns": [
+                        {
+                            "include": "#string"
+                        }
+                    ]
+                },
+                {
+                    "name": "keyword.control.enplatedmvc",
+                    "match": "@(else|endif|endfor|endforeach)\\b"
+                },
+                {
+                    "name": "meta.embedded.block.php",
+                    "begin": "(@php)\\b",
+                    "beginCaptures": {
+                        "1": {
+                            "name": "keyword.control.php.enplatedmvc"
+                        }
+                    },
+                    "end": "(@endphp)\\b",
+                    "endCaptures": {
+                        "1": {
+                            "name": "keyword.control.php.enplatedmvc"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "source.php"
+                        }
+                    ]
+                },
+                {
+                    "name": "meta.embedded.line.php",
+                    "begin": "\\{\\{",
+                    "beginCaptures": {
+                        "0": {
+                            "name": "punctuation.section.embedded.begin.enplatedmvc"
+                        }
+                    },
+                    "end": "\\}\\}",
+                    "endCaptures": {
+                        "0": {
+                            "name": "punctuation.section.embedded.end.enplatedmvc"
+                        }
+                    },
+                    "patterns": [
+                        {
+                            "include": "#expression"
+                        }
+                    ]
+                }
+            ]
+        },
+        "expression": {
+            "patterns": [
+                {
+                    "match": "\\b[0-9]+\\b",
+                    "name": "constant.numeric.enplatedmvc"
+                },
+                {
+                    "match": "\\b(env)\\s*\\(",
+                    "name": "support.function.enplatedmvc"
+                },
+                {
+                    "include": "#string"
+                },
+                {
+                    "include": "source.php"
+                }
+            ]
+        },
+        "string": {
+            "patterns": [
+                {
+                    "name": "string.quoted.single.enplatedmvc",
+                    "begin": "'",
+                    "end": "'",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.enplatedmvc",
+                            "match": "\\\\."
+                        }
+                    ]
+                },
+                {
+                    "name": "string.quoted.double.enplatedmvc",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        {
+                            "name": "constant.character.escape.enplatedmvc",
+                            "match": "\\\\."
+                        }
+                    ]
+                }
+            ]
+        },
+        "script-spec": {
+            
+        },
+        "html-spec": {
+            "patterns": [
+                {
+                    "name": "meta.tag.any.html",
+                    "begin": "<(?!script|style)([a-zA-Z][a-zA-Z0-9:-]*)(?=[^>]*>)",
+                    "beginCaptures": {
+                        "0": { "name": "punctuation.definition.tag.begin.html" },
+                        "1": { "name": "entity.name.tag.html" }
+                    },
+                    "end": "(>)",
+                    "endCaptures": {
+                        "0": { "name": "punctuation.definition.tag.end.html" }
+                    },
+                    "patterns": [
+                        { "include": "#tag-attributes" }
+                    ]
+                },
+                {
+                    "name": "meta.tag.any.html",
+                    "begin": "</(?!script|style)([a-zA-Z][a-zA-Z0-9:-]*)(?=[^>]*>)",
+                    "beginCaptures": {
+                        "0": { "name": "punctuation.definition.tag.begin.html" },
+                        "1": { "name": "entity.name.tag.html" },
+                        "2": { "name": "punctuation.definition.tag.end.html" }
+                    },
+                    "end": "(?<=/>|>)",
+                    "patterns": [
+                        { "include": "#tag-attributes" }
+                    ]
+                },
+                {
+                    "name": "meta.tag.script.html",
+                    "begin": "<script(?:[^>]*?)>",
+                    "beginCaptures": {
+                        "0": { "name": "punctuation.definition.tag.begin.html" }
+                    },
+                    "end": "</script>",
+                    "endCaptures": {
+                        "0": { "name": "punctuation.definition.tag.end.html" }
+                    },
+                    "patterns": [
+                        { "include": "#embedded-script" }
+                    ]
+                },
+                {
+                    "name": "meta.tag.style.html",
+                    "begin": "<style(?:[^>]*?)>",
+                    "beginCaptures": {
+                        "0": { "name": "punctuation.definition.tag.begin.html" }
+                    },
+                    "end": "</style>",
+                    "endCaptures": {
+                        "0": { "name": "punctuation.definition.tag.end.html" }
+                    },
+                    "patterns": [
+                        { "include": "#embedded-style" }
+                    ]
+                },
+                { "include": "#embedded-code" }
+            ]
+        },
+        "tag-attributes": {
+            "patterns": [
+                {
+                    "name": "entity.other.attribute-name.html",
+                    "match": "\\b([a-zA-Z\\-:]+)"
+                },
+                {
+                    "name": "string.quoted.double.html",
+                    "begin": "\"",
+                    "end": "\"",
+                    "patterns": [
+                        { "include": "#embedded-code" }
+                    ]
+                },
+                {
+                    "name": "string.quoted.single.html",
+                    "begin": "'",
+                    "end": "'",
+                    "patterns": [
+                        { "include": "#embedded-code" }
+                    ]
+                }
+            ]
+        },
+        "embedded-code": {
+            "name": "keyword.control.enplatedmvc",
+            "begin": "{{",
+            "end": "}}",
+            "patterns": [
+                {
+                    "include": "#expression"
+                }
+            ]
+        }
+    }
+}

@@ -1,0 +1,53 @@
+{
+    "name": "enplatedmvc",
+    "displayName": "Enplated MVC Syntax",
+    "description": "Syntax highlighting for Enplated MVC framework Blades files",
+    "version": "1.0.0",
+    "publisher": "Karlosoft",
+    "engines": {
+        "vscode": "^1.91.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "grammars": [
+            {
+                "language": "enplatedmvc",
+                "scopeName": "source.enplatedmvc",
+                "path": "./syntaxes/enplatedmvc.tmLanguage.json"
+            }
+        ],
+        "snippets": [
+            {
+                "language": "enplatedmvc",
+                "path": "./snippets/enplatedmvc.json"
+            }
+        ],
+        "languages": [
+            {
+                "id": "enplatedmvc",
+                "aliases": [
+                    "Enplated MVC Blade",
+                    "enplatedmvc"
+                ],
+                "extensions": [
+                    ".enp"
+                ],
+                "configuration": "./language-configuration.json",
+                "icon": {
+                    "light": "media/logo-light.svg",
+                    "dark": "media/logo-dark.svg"
+                }
+            }
+        ],
+        "icons": {
+            "enplatedmvc-icon": {
+                "description": "Icon for Enplated MVC files",
+                "default": "add",
+                "light": "media/logo-light.svg",
+                "dark": "media/logo-dark.svg"
+            }
+        }
+    }
+}

@@ -1,0 +1,119 @@
+{
+    "If Statement": {
+        "prefix": "if",
+        "body": [
+            "@if (${1:condition}) {",
+            "\t${2}",
+            "@endif"
+        ],
+        "description": "If statement"
+    },
+    "Else Statement": {
+        "prefix": "else",
+        "body": [
+            "@else {",
+            "\t${1}",
+            "}"
+        ],
+        "description": "Else statement"
+    },
+    "Else If Statement": {
+        "prefix": "elseif",
+        "body": [
+            "@elseif (${1:condition}) {",
+            "\t${2}",
+            "}"
+        ],
+        "description": "Else If statement"
+    },
+    "End If Statement": {
+        "prefix": "endif",
+        "body": [
+            "@endif"
+        ],
+        "description": "End If statement"
+    },
+    "For Statement": {
+        "prefix": "for",
+        "body": [
+            "@for (${1:variable} = ${2:start}; ${1} <= ${3:end}; ${1}++) {",
+            "\t${3}",
+            "@endfor"
+        ],
+        "description": "For statement"
+    },
+    "End For Statement": {
+        "prefix": "endfor",
+        "body": [
+            "@endfor"
+        ],
+        "description": "End For statement"
+    },
+    "Foreach Statement": {
+        "prefix": "foreach",
+        "body": [
+            "@foreach (${1:variable} in ${2:array}) {",
+            "\t${3}",
+            "@endforeach"
+        ],
+        "description": "Foreach statement"
+    },
+    "End Foreach Statement": {
+        "prefix": "endforeach",
+        "body": [
+            "@endforeach"
+        ],
+        "description": "End Foreach statement"
+    },
+    "PHP Block": {
+        "prefix": "php",
+        "body": [
+            "@php",
+            "\t${1}",
+            "@endphp"
+        ],
+        "description": "PHP block"
+    },
+    "PHP End Block": {
+        "prefix": "endphp",
+        "body": [
+            "@endphp"
+        ],
+        "description": "End PHP block"
+    },
+    "Include Statement": {
+        "prefix": "include",
+        "body": [
+            "@include('${1:file}')"
+        ],
+        "description": "Include statement"
+    },
+    "Safe print": {
+        "prefix": "safeprint",
+        "body": [
+            "{{ ${1:variable} }}"
+        ],
+        "description": "Safe print"
+    },
+    "Environment Variable": {
+        "prefix": "env",
+        "body": [
+            "{{ env('${1:VAR}') }}"
+        ],
+        "description": "Environment variable"
+    },
+    "BASE URL": {
+        "prefix": "baseurl",
+        "body": [
+            "{{ env('BASE_URL') }}"
+        ],
+        "description": "Base URL"
+    },
+    "Comment": {
+        "prefix": "comment",
+        "body": [
+            "{{-- ${1} --}}"
+        ],
+        "description": "Comment"
+    }
+}
