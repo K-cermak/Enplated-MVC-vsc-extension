@@ -1,7 +1,7 @@
 {
     "name": "enplatedmvc",
-    "displayName": "Enplated MVC Syntax",
-    "description": "Syntax highlighting for Enplated MVC framework Blades files",
+    "displayName": "Enplated MVC",
+    "description": "Syntax Highlighting for Enplated MVC Framework Blades files",
     "version": "1.0.0",
     "publisher": "Karlosoft",
     "engines": {
