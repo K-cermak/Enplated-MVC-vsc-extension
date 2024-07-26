@@ -2,18 +2,36 @@
     "name": "enplatedmvc",
     "displayName": "Enplated MVC",
     "description": "Syntax Highlighting for Enplated MVC Framework Blades files",
-    "version": "1.0.0",
+    "version": "1.0.2",
     "publisher": "Karlosoft",
-    "engines": {
-        "vscode": "^1.91.0"
+    "author": {
+        "name": "Karel Cermak",
+        "email": "info@karlosoft.com",
+        "url": "https://karlosoft.com"
     },
     "repository": {
         "type": "git",
         "url": "git://github.com/K-cermak/Enplated-MVC-vsc-extension.git"
     },
+    "homepage": "https://enplated.karlosoft.com/mvc/",
+    "engines": {
+        "vscode": "^1.91.0"
+    },
     "categories": [
-        "Programming Languages"
+        "Programming Languages",
+        "Language Packs",
+        "Snippets"
     ],
+    "keywords": [
+        "blade",
+        "template",
+        "snippet",
+        "formatter",
+        "syntax",
+        ".enp",
+        "enplated",
+        "mvc"
+      ],
     "contributes": {
         "grammars": [
             {
@@ -52,6 +70,8 @@
                 "light": "media/logo-light.svg",
                 "dark": "media/logo-dark.svg"
             }
-        }
+        },
+        "icon": "media/logo.png",
+        "license" : "MIT"
     }
 }
