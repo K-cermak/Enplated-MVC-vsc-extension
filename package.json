@@ -2,7 +2,7 @@
     "name": "enplatedmvc",
     "displayName": "Enplated MVC",
     "description": "Syntax Highlighting for Enplated MVC Framework Blades files",
-    "version": "1.0.3",
+    "version": "1.0.1",
     "publisher": "Karlosoft",
     "author": {
         "name": "Karel Cermak",
@@ -73,5 +73,9 @@
         }
     },
     "icon": "media/logo.png",
+    "galleryBanner": {
+        "color": "#D9E4EE",
+        "theme": "light"
+    },
     "license" : "MIT"
 }

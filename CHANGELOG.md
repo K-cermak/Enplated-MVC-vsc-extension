@@ -1,16 +1,8 @@
 # Change Log
 
-## 1.0.3
-
-- Change of icon (wrong position)
-
-## 1.0.2
-
-- Change of icon and description
-
 ## 1.0.1
 
-- Added icon, changed description and package.json
+- Changed theme in VS Code Marketplace
 
 ## 1.0.0
 
