@@ -7,6 +7,10 @@
     "engines": {
         "vscode": "^1.91.0"
     },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/K-cermak/Enplated-MVC-vsc-extension.git"
+    },
     "categories": [
         "Programming Languages"
     ],
