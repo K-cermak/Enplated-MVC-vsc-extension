@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.3
+
+- Added missing directives in README.md
+
 ## 1.0.2
 
 - Slightly improved enplated MVC grammar
