@@ -18,3 +18,5 @@
 - `{{ env() }}`
 - `{{ $variable }}`
 - `{{-- comment --}}`
+- `@php`
+- `@endphp`
